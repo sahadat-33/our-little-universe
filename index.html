@@ -893,7 +893,7 @@ section {
 
 
 /* =====================================================
-   SPOTIFY
+   YOUTUBE PLAYLIST
 ===================================================== */
 
 .playlist {
@@ -918,24 +918,39 @@ section {
     line-height: 1.7;
 }
 
-.spotify {
+.youtube {
     max-width: 700px;
 
     margin: auto;
-}
 
-.spotify iframe {
+    position: relative;
+
     width: 100%;
 
-    height: 352px;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
 
-    border: none;
+    height: 0;
 
     border-radius: 14px;
+
+    overflow: hidden;
 
     box-shadow:
         0 15px 40px
         rgba(50,20,35,.15);
+}
+
+.youtube iframe {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
 }
 
 .playlist-note {
@@ -2396,13 +2411,14 @@ section {
     </p>
 
 
-    <div class="spotify">
+    <div class="youtube">
 
         <iframe
-            src="https://open.spotify.com/embed/playlist/7uC8cUciOSVzQQUgNgzA2G"
-            title="Our Spotify Playlist"
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy">
+            src="https://www.youtube.com/embed/videoseries?list=PLAIkG2cQ_t9Q"
+            title="Our YouTube Playlist"
+            allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+            allowfullscreen>
         </iframe>
 
     </div>
