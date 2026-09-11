@@ -1751,6 +1751,7 @@ section {
      MUSIC
 ===================================================== -->
 
+<!--
 <audio id="backgroundMusic" loop preload="auto">
     <source
         src="I Love You Too Much.mp3"
@@ -1766,6 +1767,7 @@ section {
     🎵
 
 </button>
+-->
 
 
 <!-- =====================================================
@@ -2522,10 +2524,16 @@ const music =
 const musicButton =
     document.getElementById("musicButton");
 
-music.volume = 0.35;
+if (music) {
+    music.volume = 0.35;
+}
 
 
 function startMusic() {
+
+    if (!music || !musicButton) {
+        return;
+    }
 
     music.play()
         .then(() => {
@@ -2539,6 +2547,10 @@ function startMusic() {
 
 
 function toggleMusic() {
+
+    if (!music || !musicButton) {
+        return;
+    }
 
     if (music.paused) {
 
